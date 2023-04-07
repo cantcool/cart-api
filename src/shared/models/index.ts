@@ -1,7 +1,12 @@
 import { Request } from 'express';
 
-import { User } from '../../users';
+interface JWTUser {
+  username: string;
+  sub: string;
+  iat: number;
+  exp: number;
+}
 
 export interface AppRequest extends Request {
-  user?: User
+  user?: JWTUser;
 }
